@@ -1,0 +1,54 @@
+a {
+    color: inherit;
+}
+body{
+    overflow: hidden;
+    background-image: url("../../../assets/bg.webp");
+}
+
+.Container{
+    margin: 100px 400px;
+    background-color: #297AAE;
+    padding: 20px 40px;
+
+    .LogoContainer{
+        display: flex;
+        justify-content: center;
+
+        .CustomLogo{
+            width: 100px;
+            display: block;
+            left: auto;
+            right: auto;
+        }
+    }
+
+    .Title{
+        font-weight: 500;
+        font-size: 2rem;
+        text-align: center;
+        color: #fff;
+    }
+
+    .FormLogin{
+        .CustomSubmit{
+            width: 100%;
+            color: #fff;
+            background-color: #1b4e6d;
+        }
+        .Spacer{
+            margin-top: 1rem;
+        }
+        .CustomForgetPassword{
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+            color: #fff;
+
+            .CustomForgetPasswordText{
+                color: "#fff";
+            }
+        }
+    }
+
+}
