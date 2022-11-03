@@ -1,0 +1,76 @@
+a {
+    color: inherit;
+}
+body{
+    overflow: hidden;
+    background-image: url("../../../assets/bg.webp");
+}
+
+.Container{
+    margin: 60px 300px 60px;
+    background-color: #297AAE;
+    padding: 20px 40px;
+    color: #fff;
+
+    .LogoContainer{
+        display: flex;
+        justify-content: center;
+
+        .CustomLogo{
+            width: 100px;
+            display: block;
+            left: auto;
+            right: auto;
+        }
+    }
+
+    .Title{
+        font-weight: 500;
+        font-size: 2rem;
+        text-align: center;
+        color: #fff;
+    }
+
+    .FormLogin{
+        .ContactContainer{
+            display: flex;
+            width: 100%;
+
+            .CustomEmail{
+                width: 50%;
+                margin-right: 30px;
+            }
+
+            .CustomPhone{
+                width: 50%;
+            }
+        }
+        
+        .CustomSubmit{
+            width: 100%;
+            color: #fff;
+            background-color: #1b4e6d;
+            margin-top: 50px;
+        }
+        
+        .Spacer{
+            margin-top: 2rem;
+        }
+        .CustomForgetPassword{
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+            color: #fff;
+
+            .CustomForgetPasswordText{
+                color: "#fff";
+            }
+        }
+    }
+
+    .CustomSendEmail{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+}
