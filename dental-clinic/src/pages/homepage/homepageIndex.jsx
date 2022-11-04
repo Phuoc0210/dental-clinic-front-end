@@ -1,6 +1,9 @@
 import React from "react";
+import Certificate from "./Certificate/Certificate";
 import Consultant from "./Consultant/Consultant";
+import Doctor from "./Doctor/Doctor";
 import Reason from "./Reason/Reason";
+import Service from "./Service/Service";
 import SliderBanner from "./Slider/SliderBanner";
 
 export default function HomepageIndex() {
@@ -11,6 +14,12 @@ export default function HomepageIndex() {
       <Consultant />
 
       <Reason />
+
+      <Service />
+
+      <Doctor />
+
+      <Certificate />
     </>
   );
 }

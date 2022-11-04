@@ -39,6 +39,7 @@ export default function Reason() {
             display: "flex",
             justifyContent: "space-around",
             width: "100%",
+            color: "rgb(119, 81, 109)",
           }}
         >
           <div
