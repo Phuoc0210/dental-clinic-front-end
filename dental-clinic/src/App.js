@@ -1,14 +1,12 @@
 import './App.css';
 import HomepageIndex from './pages/homepage/homepageIndex';
 import FormContainer from './pages/user/login/index.jsx';
-
-function App() {
+import Record from './pages/Doctor/Managerecord/Managerecord';
+function App() {                      
   return (
     <>
-      {/* <FormContainer /> */}
-      <HomepageIndex />
+      <Record />
     </>
   );
 }
-
 export default App;
