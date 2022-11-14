@@ -10,7 +10,7 @@ export default function Login() {
     e.preventDefault();
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
-    console.log(username, password);
+    //console.log(username, password);
     try {
       authApi.login({ username, password });
     } catch (error) {
