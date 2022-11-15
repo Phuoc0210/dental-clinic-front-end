@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import authApi from "../../../api/authApi";
+import { getCookie, setCookie } from "../../../utils/utils";
 import "./index.scss";
 
 export default function Login() {
@@ -8,11 +9,18 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const username = usernameRef.current.value;
-    const password = passwordRef.current.value;
-    //console.log(username, password);
+    const acc_un = usernameRef.current.value;
+    const acc_mk = passwordRef.current.value;
     try {
-      authApi.login({ username, password });
+      const resp = await authApi.login({ acc_un, acc_mk });
+      console.log(resp);
+      const cookie = {
+        accessToken: "abc",
+        acc_un,
+        rememberId: true,
+      };
+      setCookie(`token`, JSON.stringify(cookie));
+      getCookie(`token`);
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +41,6 @@ export default function Login() {
           </label>
           <input
             ref={usernameRef}
-            type="email"
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -74,7 +81,7 @@ export default function Login() {
         </a>
 
         <br />
-        <button type="submit" className="btn btn-info CustomSubmit">
+        <button onClick={{}} className="btn btn-info CustomSubmit">
           Tạo tài khoản mới
         </button>
         <div className="Spacer"></div>
