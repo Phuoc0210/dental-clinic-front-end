@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import authApi from "../../../api/authApi";
 import { getCookie, setCookie } from "../../../utils/utils";
 import "./index.scss";
@@ -6,6 +7,7 @@ import "./index.scss";
 export default function Login() {
   const usernameRef = useRef();
   const passwordRef = useRef();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +23,9 @@ export default function Login() {
       };
       setCookie(`token`, JSON.stringify(cookie));
       getCookie(`token`);
+      if (resp.status==200) {
+        navigate("/homepage");
+      }
     } catch (error) {
       console.log(error);
     }
