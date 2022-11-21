@@ -1,13 +1,19 @@
 import './App.css';
-import HomepageIndex from './pages/homepage/homepageIndex';
-import FormContainer from './pages/user/login/index.jsx';
-
+import PatientPage from './pages/adminmedicalrecords/PatientPage';
+import {BrowserRouter as Router ,Route,Routes} from 'react-router-dom'
+import Navbar from './component/Navbar';
+import Header from './component/Header';
+import Footer from './component/Footer';
 function App() {
   return (
-    <>
-      {/* <FormContainer /> */}
-      <HomepageIndex />
-    </>
+    <Router>
+      <Header/>
+      <Navbar />
+      <Routes>
+      <Route path="/" element={<PatientPage/>} />
+      </Routes>
+      <Footer/>
+    </Router>
   );
 }
 
