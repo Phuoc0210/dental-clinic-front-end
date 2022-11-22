@@ -23,7 +23,7 @@ export default function Login() {
       };
       setCookie(`token`, JSON.stringify(cookie));
       getCookie(`token`);
-      if (resp.status==200) {
+      if (resp.status == 200) {
         navigate("/homepage");
       }
     } catch (error) {

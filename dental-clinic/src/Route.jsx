@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomepageIndex from "./pages/homepage/homepageIndex";
 import FormContainer from "./pages/user/login";
 import Login from "./pages/user/login/login";
 
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <FormContainer />,
+  },
+  {
+    path: "/homepage",
+    element: <HomepageIndex />,
   },
 ]);
 
