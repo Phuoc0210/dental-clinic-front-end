@@ -1,19 +1,18 @@
-import './App.css';
-import PatientPage from './pages/adminmedicalrecords/PatientPage';
-import {BrowserRouter as Router ,Route,Routes} from 'react-router-dom'
-import Navbar from './component/Navbar';
-import Header from './component/Header';
-import Footer from './component/Footer';
+
+import "./App.css";
+import HomepageIndex from "./pages/homepage/homepageIndex";
+import FormContainer from "./pages/user/login/index.jsx";
+import { Routes, Switch, Route, Link, RouterProvider } from "react-router-dom";
+import AppRoute from "./Route";
+
 function App() {
   return (
-    <Router>
-      <Header/>
-      <Navbar />
-      <Routes>
-      <Route path="/" element={<PatientPage/>} />
-      </Routes>
-      <Footer/>
-    </Router>
+    <>
+      {/* <FormContainer /> */}
+      {/* <HomepageIndex /> */}
+      <AppRoute />
+    </>
+
   );
 }
 

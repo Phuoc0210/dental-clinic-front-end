@@ -1,17 +1,51 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import authApi from "../../../api/authApi";
+import { getCookie, setCookie } from "../../../utils/utils";
 import "./index.scss";
 
 export default function Login() {
+  const usernameRef = useRef();
+  const passwordRef = useRef();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const acc_un = usernameRef.current.value;
+    const acc_mk = passwordRef.current.value;
+    try {
+      const resp = await authApi.login({ acc_un, acc_mk });
+      console.log(resp);
+      const cookie = {
+        accessToken: "abc",
+        acc_un,
+        rememberId: true,
+      };
+      setCookie(`token`, JSON.stringify(cookie));
+      getCookie(`token`);
+      if (resp.status == 200) {
+        navigate("/homepage");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="Title">Đăng nhập</div>
-      <form className="FormLogin">
+      <form
+        className="FormLogin"
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+      >
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Tên tài khoản
           </label>
           <input
-            type="email"
+            ref={usernameRef}
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -23,6 +57,7 @@ export default function Login() {
             Mật khẩu
           </label>
           <input
+            ref={passwordRef}
             type="password"
             className="form-control"
             id="exampleInputPassword1"
@@ -51,7 +86,7 @@ export default function Login() {
         </a>
 
         <br />
-        <button type="submit" className="btn btn-info CustomSubmit">
+        <button onClick={{}} className="btn btn-info CustomSubmit">
           Tạo tài khoản mới
         </button>
         <div className="Spacer"></div>

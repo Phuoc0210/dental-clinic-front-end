@@ -13,11 +13,11 @@ export default function FormContainer() {
       <div className="LogoContainer">
         <img src={LoginImage} alt="logo" className="CustomLogo" />
       </div>
-      {/* <Login /> */}
+      <Login />
       {/* <Signup /> */}
       {/* <Reset /> */}
       {/* <ResetPassword /> */}
-      <NewPassword />
+      {/* <NewPassword /> */}
     </div>
   );
 }
