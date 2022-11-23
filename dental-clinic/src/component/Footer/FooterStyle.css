@@ -1,0 +1,74 @@
+
+.wrapper-footer{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container-intro{
+    display: flex;
+    width: 75%;
+    justify-content: center
+}
+.wrapper-intro{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.intro{
+    width: 50%;
+    margin: 30px;
+}
+.schedule{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper-about{
+    background-color: rgb(17, 93, 157);
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+}
+.container-about{
+    display: flex;  
+    width: 75%;
+}
+.content-about-hospital, .content-about-contact{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+.content-about-link{
+    display: flex;
+    width: 20%;
+}
+.content-about-hospital{
+    width: 30%;
+}
+.content-about-contact{
+    width: 50%;
+}
+.menu{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    margin: 0px;
+    padding: 0px;
+}
