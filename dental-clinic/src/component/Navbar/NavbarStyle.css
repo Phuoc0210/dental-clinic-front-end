@@ -10,19 +10,20 @@
 }
 .container{
     display: flex;
-    width: 1150px;
+    width: 75%;
     height: 100%;
     align-items: center;
     list-style-type: none;
 }
 
-a{
-    color: white;
-    padding: 10px;
+.tab a{
     text-decoration: none;
-    display: block;
+    color:  white;
 }
-a:hover{
+.tab{
+   line-height: 50px;
+}
+.tab:hover{
     background-color: rgb(22, 120, 203);
     color: white;
 }

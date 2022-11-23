@@ -1,13 +1,13 @@
 import React from "react";
-import className from 'classnames/bind'
-import styles from './FooterStyle.css'
+import classNames from 'classnames/bind'
+import footerStyle from './FooterStyle.css'
 import {AiFillInstagram,AiFillMail} from 'react-icons/ai'
 import {FaFacebookF} from 'react-icons/fa'
 import {  BsYoutube} from 'react-icons/bs'
 import Logo from '../../assets/Logo.png'
 import Schedule from '../../assets/schedule.png'
 
-const cx = className.bind(styles);
+const cx = classNames.bind(footerStyle);
 
 function Footer(){
     return(
@@ -28,27 +28,15 @@ function Footer(){
             <div className={cx("wrapper-about")}>
                 <div className={cx("container-about")}>
                         <div className={cx("content-about-hospital")}>
-                            <ul className={cx("menu")}>
-                                <li>Về Dr.Strange</li>
-                                <li>
-                                    <a href="/">Về chúng tôi</a>
-                                </li>
-                                <li>
-                                    <a href="/">Về đội ngũ bác sĩ</a>
-                                </li>
-                                <li>
-                                    <a href="/">Câu chuyện khách hàng</a>
-                                </li>
-                                <li>
-                                    <a href="/">Kiến thức nha khoa</a>
-                                </li>
-                                <li>
-                                    <a href="/">Hoạt động</a>
-                                </li>
-                            </ul>
+                            <span className={cx('title-footer')}>Về Dr.Strange</span>
+                            <span>Về chúng tôi</span>
+                            <span>Về đội ngũ bác sĩ</span>
+                            <span>Câu chuyện khách hàng</span>
+                            <span>Kiến thức nha khoa</span>
+                            <span>Hoạt động</span>
                         </div>
                         <div className={cx("content-about-contact")}>
-                            <label>Liên Hệ</label>
+                            <span className={cx('title-footer')}>Liên Hệ</span>
                             <p>Mọi thông tin liên hệ, thắc mắc, hỏi đáp, xin liên hệ chúng tôi:</p>
                             <p>
                                 <span>Địa chỉ: 66 Tân Sơn Hoà, Phường 2, Quận Tân Bình, Tp. Hồ Chí Minh</span>
@@ -59,10 +47,10 @@ function Footer(){
                             </p>                                                                     
                         </div>
                         <div className={cx('content-about-link')}>
-                            <FaFacebookF/>
-                            <BsYoutube/>
-                            <AiFillInstagram/>
-                            <AiFillMail/>
+                            <FaFacebookF className={cx('icon-footer')}/>
+                            <BsYoutube className={cx('icon-footer')}/>
+                            <AiFillInstagram className={cx('icon-footer')}/>
+                            <AiFillMail className={cx('icon-footer')}/>
                         </div>
             </div>
         </div>

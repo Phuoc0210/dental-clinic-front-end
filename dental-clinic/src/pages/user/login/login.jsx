@@ -7,7 +7,9 @@ import "./index.scss";
 export default function Login() {
   const usernameRef = useRef();
   const passwordRef = useRef();
+
   const [isLoginSuccess, setIsLoginSuccess] = useState(false);
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -27,7 +29,9 @@ export default function Login() {
       if (resp.status == 200) {
         navigate("/homepage");
       }
+
       setIsLoginSuccess(!isLoginSuccess);
+
     } catch (error) {
       console.log(error);
     }
