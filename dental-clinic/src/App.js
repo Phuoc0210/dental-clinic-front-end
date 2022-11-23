@@ -1,7 +1,8 @@
 import './App.css';
+// import React from 'react';
 // import ServicePage from './pages/Services/ServicePageIndex';
 // import BlogPage from './pages/Blog/BlogPage';
-// import { useState } from "react";
+// // import { useState } from "react";
 // import HomepageIndex from './pages/homepage/homepageIndex';
 // import FormContainer from './pages/user/login/index.jsx';
 // import {
@@ -12,14 +13,17 @@ import './App.css';
 // } from "react-router-dom";
 // import ContentService from './pages/MakeAppointment/MakeAppointment';
 // import ServicePage from './pages/Services/ServicePageIndex';
-import Book from './pages/MakeAppointment/MakeAppointment';
-  
+// import Book from './pages/MakeAppointment/MakeAppointment';
+// import Date from './pages/MakeAppointment/component/Datepicker';  
+// import Login from './pages/user/login/login';
+// import Book from './pages/MakeAppointment/MakeAppointment';
+import PostForm from './pages/MakeAppointment/MakeAppointment';
 
 
 function App() {
   return (
     <>
-    <Book/>
+    <PostForm/>
     </>
   );
 }

@@ -1,12 +1,16 @@
-.container {
-    width: 50%;
-    margin: auto;
+.form {
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;
-
+    display:block;
+   
 }
-    input[type=text] {
+.FormContent{
+max-width: 500px;
+}
+.container{
+display: flex;
+}
+    input[type=text], input[type=tel], input[type=date], input[type=time], textarea  {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -16,8 +20,16 @@
     margin-bottom: 16px;
     resize: vertical;
 }
- 
-input[type=submit] {
+/* .Id{
+    display:none;
+} */
+ .error{
+    color: red;
+ }
+ .Notify{
+    color: green;
+ }
+input[type=submit]{
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -29,17 +41,23 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
-.Logo{
+/* .Logo{
    text-align: center;
-}
+   width: 50%;
+} */
 
 
-.Logo img{
-    margin:20%;
+/* .Logo, */
+ .Slider{
+
+    display:block;
+    margin: 0px 30px;
 }
 h2 center{
     color: rgb(33, 177, 226);
 }
 .ImgLogo{
     text-align: center;
+    display:block;
+    margin-bottom: 20px;
 }
