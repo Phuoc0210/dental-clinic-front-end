@@ -1,0 +1,35 @@
+*{
+	list-style: none;
+	text-decoration: none;
+}
+
+.sidebar{
+	background-color: #003464;
+	color: white;
+	font-size: 16px;
+	line-height: 80px;
+	width: 300px;
+	height: 400px;
+	border-radius: 0px 16px 16px 0px;
+	box-shadow: 3px 7px 10px #828282;
+	margin-top: 40px;
+}
+.menu a{
+	display: block;	
+	transition: 0.2s;
+}
+a{text-decoration: none;}
+
+ul li:hover a{
+	font-size: 18px;
+	padding-left: 4px;
+	color: white;
+	background-color: rgb(22, 120, 203);
+}
+.option{
+	padding-left: 8px;
+}
+.menu{
+	margin: 0px;
+	padding: 0px;
+}

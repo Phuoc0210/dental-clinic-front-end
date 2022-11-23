@@ -1,18 +1,28 @@
-
 import "./App.css";
-import HomepageIndex from "./pages/homepage/homepageIndex";
-import FormContainer from "./pages/user/login/index.jsx";
-import { Routes, Switch, Route, Link, RouterProvider } from "react-router-dom";
-import AppRoute from "./Route";
-
+import {Routes,Route} from 'react-router-dom'
+import {publicRoute} from './routes'
+import {DefaultLayout, AdminLayout} from './component/Layout'
+import { Fragment } from "react";
 function App() {
-  return (
-    <>
-      {/* <FormContainer /> */}
-      {/* <HomepageIndex /> */}
-      <AppRoute />
-    </>
 
+  return (
+    <div className="app">
+        <Routes>
+            {publicRoute.map( (route, index) => {
+                const Page = route.component;
+                const Layout = route.layout === 'default' ? DefaultLayout : AdminLayout;
+                return <Route 
+                          key={index} 
+                          path={route.path} 
+                          element={
+                          <Layout>
+                              <Page/>
+                          </Layout>
+                          }
+                        />
+            })}
+        </Routes>
+    </div>
   );
 }
 

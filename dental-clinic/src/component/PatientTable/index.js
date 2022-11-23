@@ -1,7 +1,10 @@
 import React from 'react'
+import classNames from 'classnames/bind'
 import {useEffect,useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import PatientTableStyle from './PatientTableStyle.css'
 
-import './PatientTable.css'
+const cx = classNames.bind(PatientTableStyle);
 
 function PatientTable(){
     const url = 'https://dental-clinic-project.herokuapp.com/api/patient_list'
@@ -14,10 +17,16 @@ function PatientTable(){
     }
     );
     },[])
+    const navigate = useNavigate();
+    function handleCLick(e){
+        var rowId = 
+            e.target.parentNode.id;
+        navigate(`/admin/record/${rowId}`)
+    }
     return(
-        <div className='wrapper-table'>
-            <div className='name-table'>Quản lý hồ sơ bệnh án</div>
-            <table className='patients-table'>
+        <div className={cx('wrapper-table')}>
+            <div className={cx('name-table')}>Quản lý hồ sơ bệnh án</div>
+            <table className={cx('patients-table')}>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -31,7 +40,8 @@ function PatientTable(){
                     {
                         patients.map( patient => (
                             <tr key={patient['p_id']} id={patient['p_id']} 
-                            onClick={handleCLick}
+                            onClick={handleCLick} 
+                            style={{backgroundColor: patient['p_id'] % 2 == 1 ? "DCF2FF" : "#B8E3FF"}}
                             >
                                 <td>{patient['p_id']}</td>
                                 <td>{patient['p_name']}</td>
@@ -46,12 +56,5 @@ function PatientTable(){
         </div>
     )
 }
-
-function handleCLick(e){
-    var rowId = 
-        e.target.parentNode.id;
-        alert(rowId);
-}
-
 
 export default PatientTable
