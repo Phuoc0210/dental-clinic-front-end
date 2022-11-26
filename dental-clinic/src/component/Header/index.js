@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import headerStyle from './HeaderStyle.css'
 import LogoImage from '../../assets/Logo.png'
 import {AiOutlineSearch} from 'react-icons/ai'
 import {BsFillPersonFill} from 'react-icons/bs'
 import classNames from 'classnames/bind'
 import {useState} from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const cx = classNames.bind(headerStyle);
 
 function Header() {
-    const location =useLocation()
-    const [status,setStatus] =useState(true);
+    const [isLogin,setIsLogin] =useState(false);
     const navigate = useNavigate()
     return(
         <header className={cx('wrapper-header')}>
@@ -29,10 +28,10 @@ function Header() {
                 </div>
                 <div className={cx('btns')}>
                     <button className={cx("btn btncontact")} >Contact</button>
-                    <button className={cx('btn btnsignin',(status)?'turn':'off')} 
+                    <button className={cx('btn btnsignin',(isLogin)?'off':'turn')} 
                             onClick={()=> navigate('/login')}>Sign In</button>
-                    <button className={cx('btnavatar',(!status)?'turn':'off')}><BsFillPersonFill className={cx('avatar')}
-                            onClick={()=>(navigate('/account'))}/></button>
+                    <button className={cx('btnavatar',(isLogin)?'turn':'off')}><BsFillPersonFill className={cx('avatar')}
+                            onClick={()=>(navigate('/account/history-make-appointment'))}/></button>
                 </div>
             </div>
         </header>

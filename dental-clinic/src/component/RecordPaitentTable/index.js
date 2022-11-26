@@ -30,7 +30,12 @@ function RecordrecordTable(id){
             }
         )
     },[param.id])
-   console.log(records)
+    function handleDelete(id){
+        console.log(id)
+    }
+    function handleEdit(id){
+        console.log(id)
+    }
     return(
         <div className={cx('wrapper-table')}>
             <div className={cx('name-table')}>Quản lý hồ sơ bệnh án</div>
@@ -57,8 +62,10 @@ function RecordrecordTable(id){
                                 <td>{record['d_name']}</td>
                                 <td>{record['rec_date']}</td>
                                 <td>{record['rec_lastmodified']}</td>
-                                <td className={cx('edit-cell')}><RiDeleteBin5Fill className={cx('delete-icon')}/></td>
-                                <td className={cx('edit-cell')}><HiPencil className={cx('update-icon')}/></td>
+                                <td className={cx('edit-cell')}><RiDeleteBin5Fill onClick={handleDelete(1)} className={cx('delete-icon')}
+                                    /></td>
+                                <td className={cx('edit-cell')}><HiPencil className={cx('update-icon')}
+                                    onClick={handleEdit(1)}/></td>
                             </tr>
                         ))
                     }
