@@ -28,7 +28,7 @@ export default function HomepageIndex() {
 
       <Sale />
 
-      <Time />
+      {/* <Time /> */}
     </>
   );
 }
