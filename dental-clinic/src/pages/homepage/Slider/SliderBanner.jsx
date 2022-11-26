@@ -7,16 +7,16 @@ import { BsFillCalendar2CheckFill } from "react-icons/bs";
 export default function SliderBanner() {
   return (
     <>
-      <div style={{ marginTop: "120px" }}></div>
+      {/* <div style={{ marginTop: "120px" }}></div> */}
 
       <div
         style={{
           zIndex: "100",
-          position: "absolute",
-          top: "550px",
+          position: "fixed",
+          top: "470px",
           right: "60px",
           fontSize: "40px",
-          color: "#b0228c",
+          color: "#115d9d",
         }}
       >
         <BsFillCalendar2CheckFill />
@@ -27,14 +27,18 @@ export default function SliderBanner() {
           zIndex: "100",
           position: "absolute",
           top: "550px",
-          right: "120px",
+          right: "190px",
           fontSize: "40px",
         }}
       >
         <button
           type="button"
           class="btn customOrderBtn"
-          style={{ backgroundColor: "#b0228c", color: "#fff" }}
+          style={{
+            backgroundColor: "#115d9d",
+            color: "#fff",
+            position: "fixed",
+          }}
         >
           ĐẶT LỊCH HẸN
         </button>

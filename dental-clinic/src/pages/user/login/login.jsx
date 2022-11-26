@@ -31,7 +31,6 @@ export default function Login() {
       }
 
       setIsLoginSuccess(!isLoginSuccess);
-
     } catch (error) {
       console.log(error);
     }
