@@ -9,9 +9,9 @@ export default function Consultant() {
       <div
         style={{
           zIndex: "100",
-          position: "absolute",
-          top: "678px",
-          left: "140px",
+          position: "fixed",
+          top: "450px",
+          left: "60px",
           fontSize: "40px",
           color: "#b0228c",
         }}
@@ -22,10 +22,10 @@ export default function Consultant() {
       <div
         style={{
           zIndex: "100",
-          position: "absolute",
+          position: "fixed",
           top: "0%",
-          left: "200px",
-          top: "680px",
+          left: "60px",
+          top: "400px",
           fontSize: "40px",
         }}
       >
