@@ -13,7 +13,7 @@ export default function Consultant() {
           top: "450px",
           left: "60px",
           fontSize: "40px",
-          color: "#b0228c",
+          color: "#115d9d",
         }}
       >
         <BsFillChatDotsFill />
@@ -33,7 +33,7 @@ export default function Consultant() {
           type="button"
           class="btn customOrderBtn"
           style={{
-            backgroundColor: "#b0228c",
+            backgroundColor: "#115d9d",
             color: "#fff",
           }}
         >
@@ -43,7 +43,7 @@ export default function Consultant() {
 
       <div
         style={{
-          color: "#77516d",
+          color: "#115d9d",
           fontSize: "2.5rem",
           fontWeight: "800",
           textDecoration: "underline",

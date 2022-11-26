@@ -16,7 +16,7 @@ export default function SliderBanner() {
           top: "470px",
           right: "60px",
           fontSize: "40px",
-          color: "#b0228c",
+          color: "#115d9d",
         }}
       >
         <BsFillCalendar2CheckFill />
@@ -35,7 +35,7 @@ export default function SliderBanner() {
           type="button"
           class="btn customOrderBtn"
           style={{
-            backgroundColor: "#b0228c",
+            backgroundColor: "#115d9d",
             color: "#fff",
             position: "fixed",
           }}

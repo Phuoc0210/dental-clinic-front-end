@@ -7,7 +7,7 @@ export default function Story() {
     <div style={{ marginLeft: "200px", marginRight: "200px" }}>
       <div
         style={{
-          color: "#77516d",
+          color: "#3d3191",
           fontSize: "2.2rem",
           fontWeight: "600",
           textDecoration: "underline",

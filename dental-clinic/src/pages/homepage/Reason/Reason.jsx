@@ -10,13 +10,13 @@ export default function Reason() {
   return (
     <div
       style={{
-        backgroundColor: "#f8ccea",
+        backgroundColor: "#e9f5ff",
         padding: "0px 200px 40px",
       }}
     >
       <div
         style={{
-          color: "#fff",
+          color: "#100777",
           fontSize: "1.8rem",
           textAlign: "center",
           fontWeight: "bold",
@@ -39,7 +39,7 @@ export default function Reason() {
             display: "flex",
             justifyContent: "space-around",
             width: "100%",
-            color: "rgb(119, 81, 109)",
+            color: "#5a5881",
           }}
         >
           <div

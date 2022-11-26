@@ -16,7 +16,7 @@ export default function Service() {
           textAlign: "center",
           fontWeight: "bold",
           fontSize: "2rem",
-          color: "rgb(119, 81, 109)",
+          color: "#080368",
         }}
       >
         DỊCH VỤ CỦA CHÚNG TÔI
