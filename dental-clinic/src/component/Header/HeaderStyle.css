@@ -57,9 +57,6 @@ input{
 .tab{
     margin: 20px;
 }
-.turn{
-    display: none;
-}
 .btnavatar{
     background-color: orange;
     border-radius: 100px;
@@ -76,6 +73,7 @@ input{
     width: 24px;
     height: 24px;
 }
-
-
+.off{
+    display: none;
+}
 

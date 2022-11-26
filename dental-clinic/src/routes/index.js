@@ -7,8 +7,9 @@ import Login from "../pages/user/login/login"
 const publicRoute = [
     { path: '/', component: HomepageIndex, layout: 'default'},
     { path: '/login', component: Login},
+    { path: '/homepage', component: HomepageIndex},
     { path: '/admin/record/:id', component: Medicalrecords},
-    { path: '/account', component: HistoryMakeAppointment},
+    { path: '/account/history-make-appointment', component: HistoryMakeAppointment},
     { path: '/admin', component: PatientPage}
 ]
 

@@ -9,7 +9,7 @@ import HistoryMakeAppointment from '../../pages/account/HistoryMakeAppointment';
 import Login from '../../pages/user/login/login';
 
 const cx = classNames.bind(navbarStyle);
-
+const isAdmin = true
 function Navbar() {
     return(
         <>
@@ -27,7 +27,7 @@ function Navbar() {
                 <li className={cx('tab')}>
                     <Link to="#">Blog</Link>
                 </li>
-                <li className={cx('tab')}>
+                <li className={cx('tab admin',(isAdmin)?'turn':'off')} >
                     <Link to="/admin">Quản lý</Link>
                 </li>
             </ul>
