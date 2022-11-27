@@ -2,11 +2,11 @@ import React from 'react'
 import classNames from 'classnames/bind'
 import {useEffect,useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-import PatientTableStyle from './PatientTableStyle.css'
+import DoctorPatientTableStyle from './DoctorPatientTableStyle.css'
 
-const cx = classNames.bind(PatientTableStyle);
+const cx = classNames.bind(DoctorPatientTableStyle);
 
-function PatientTable(){
+function DoctorPatientTable(){
     const url = 'https://dental-clinic-project.herokuapp.com/api/patient_list'
     const [patients,setPatient] = useState([])
     useEffect(()=>{
@@ -21,7 +21,7 @@ function PatientTable(){
     function handleCLick(e){
         var rowId = 
             e.target.parentNode.id;
-        navigate(`/admin/admin/record/${rowId}`)
+        navigate(`/admin/doctor/record/${rowId}`)
     }
     return(
         <div className={cx('wrapper-table')}>
@@ -57,4 +57,4 @@ function PatientTable(){
     )
 }
 
-export default PatientTable
+export default DoctorPatientTable

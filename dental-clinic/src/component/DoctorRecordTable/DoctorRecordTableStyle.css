@@ -42,12 +42,32 @@ tbody tr:hover{
     box-sizing: border-box;
     border-radius: 100px;
 }
-.delete-cell, .view-cell{
+.update-cell, .view-cell{
     width: 100px;
 }
 .view-cell .icon{
     color: green;
 }
-.delete-cell .icon{
-   color: red;
+.update-cell .icon{
+   color: blue;
+}
+.search-create{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.input-search-doctor{
+    width: 50%;
+    margin: 10px;
+}
+.btn-create{
+    margin: 10px;
+    padding: 5px 10px 5px 10px;
+    background-color: rgb(17, 93, 157);
+    color: white;
+    border: none;
+    border-radius: 16px;
+}
+.btn-create:hover{
+    background-color: rgb(22, 120, 203);
 }

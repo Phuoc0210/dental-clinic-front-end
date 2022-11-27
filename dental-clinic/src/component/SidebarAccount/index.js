@@ -4,16 +4,16 @@ import {RiLogoutBoxRLine} from "react-icons/ri"
 import {BsPersonCircle} from 'react-icons/bs'
 import {Link} from 'react-router-dom'
 import SidebarAccountStyle from './SidebarAccountStyle.css'
-
 const cx = classNames.bind(SidebarAccountStyle);
 
-function SidebarAccount() {
+function SidebarAccount({userName}) {
+    console.log(userName)
     return(
         <nav className={cx("sidebar-account")}>
             <ul className={cx("menu")}>
                 <li className={cx('header-sidebar')}>
                     <BsPersonCircle className={cx('avatar-sidebar')}/> 
-                    <span>User name</span>
+                    <span>{userName}</span>
                 </li>
                 <li>
                     <Link className={cx('option')} to="#" >
@@ -31,7 +31,7 @@ function SidebarAccount() {
                     </Link>
                 </li>
                 <li>
-                    <Link className={cx('option')} to="#" >
+                    <Link className={cx('option')} to="/" >
                         Đăng xuất <RiLogoutBoxRLine/>
                     </Link>
                 </li>
