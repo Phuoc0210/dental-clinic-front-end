@@ -2,11 +2,15 @@ import React, { useRef } from "react";
 import authApi from "../../../api/authApi";
 import { getCookie, setCookie } from "../../../utils/utils";
 import "./index.scss";
-  var name = 1;
-export let userName=name;
+  var name = "gia_loc";
+
 export default function Login() {
   const usernameRef = useRef();
   const passwordRef = useRef();
+
+  const handleChange = async (e) => {
+    name = e.target.value
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +49,9 @@ export default function Login() {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            onChange={this.ha}
+            onSubmit={(e) => {
+              handleChange(e);
+            }}
           />
         </div>
 
@@ -78,9 +84,9 @@ export default function Login() {
         <br />
 
         <div className="Spacer"></div>
-        <a className="CustomForgetPassword">
+        {/* <a className="CustomForgetPassword">
           <div className="CustomForgetPasswordText">Quên mật khẩu?</div>
-        </a>
+        </a> */}
 
         <br />
         <button onClick={{}} className="btn btn-info CustomSubmit">
@@ -91,3 +97,4 @@ export default function Login() {
     </>
   );
 }
+export let userName=name;
