@@ -1,14 +1,14 @@
 import React from 'react'
 import classNames from 'classnames/bind'
 import {useEffect,useState} from 'react'
-import RecordTableStyle from './RecordTableStyle.css'
+import DoctorRecordTableStyle from './DoctorRecordTableStyle.css'
 import { useParams } from 'react-router-dom'
-import {TiDelete} from 'react-icons/ti'
+import {MdUpdate} from 'react-icons/md'
 import {BsFillEyeFill} from 'react-icons/bs'
 
-const cx = classNames.bind(RecordTableStyle);
+const cx = classNames.bind(DoctorRecordTableStyle);
 
-function RecordrecordTable(id){
+function DoctorRecordTable(id){
     const url = 'https://dental-clinic-project.herokuapp.com/api/record/recordsOfPatient'
     const [records,setRecords] = useState([])
     const param = useParams();
@@ -40,7 +40,15 @@ function RecordrecordTable(id){
     }
     return(
         <div className={cx('wrapper-table')}>
-            <div className={cx('name-table')}>Quản lý hồ sơ bệnh án</div>
+            <div className={cx('name-table')}>
+                Quản lý hồ sơ bệnh án
+            </div>
+            <div className={cx('search-create')}>
+                <input type='search' className={cx('input-search-doctor')}
+                            placeholder='Nhập thông tim tìm kiếm...'>    
+                        </input>
+                <button className={cx('btn-create')}>Thêm mới</button>
+            </div>
             <table className={cx('records-table')}>
                 <thead>
                     <tr>
@@ -49,7 +57,7 @@ function RecordrecordTable(id){
                         <th>Tên bác sĩ</th>
                         <th>Ngày lâp</th>
                         <th>Ngày cập nhật</th>
-                        <th>Xóa</th>
+                        <th>Cập nhật</th>
                         <th>Xem</th>
                     </tr>
                 </thead>
@@ -64,9 +72,9 @@ function RecordrecordTable(id){
                                 <td>{record['d_name']}</td>
                                 <td>{record['rec_date']}</td>
                                 <td>{record['rec_lastmodified']}</td>
-                                <td className={cx('delete-cell')}
+                                <td className={cx('update-cell')}
                                     onClick={handleDelete}>
-                                    <TiDelete className={cx('icon')}/>
+                                    <MdUpdate className={cx('icon')}/>
                                 </td>
                                 <td className={cx('view-cell')}
                                     onClick={handleEdit} >
@@ -82,4 +90,4 @@ function RecordrecordTable(id){
 }
 
 
-export default RecordrecordTable
+export default DoctorRecordTable

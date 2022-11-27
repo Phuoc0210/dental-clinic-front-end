@@ -8,8 +8,6 @@ export default function Login() {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
-  const [isLoginSuccess, setIsLoginSuccess] = useState(false);
-
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -27,10 +25,8 @@ export default function Login() {
       setCookie(`token`, JSON.stringify(cookie));
       getCookie(`token`);
       if (resp.status == 200) {
-        navigate("/homepage");
+        navigate('/homepage', { state: acc_un })
       }
-
-      setIsLoginSuccess(!isLoginSuccess);
     } catch (error) {
       console.log(error);
     }

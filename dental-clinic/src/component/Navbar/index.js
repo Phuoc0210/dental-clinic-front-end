@@ -1,22 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames/bind'
 import navbarStyle from './NavbarStyle.css'
-import {Link, Route , Routes} from 'react-router-dom'
-import HomepageIndex from '../../pages/homepage/homepageIndex';
-import Medicalrecords from '../../pages/adminmedicalrecords/Medicalrecords/index.js';
-import PatientPage from '../../pages/adminmedicalrecords/PatientPage';
-import HistoryMakeAppointment from '../../pages/account/HistoryMakeAppointment';
-import Login from '../../pages/user/login/login';
-
+import {Link} from 'react-router-dom'
 const cx = classNames.bind(navbarStyle);
-const isAdmin = true
+
 function Navbar() {
+    const [isAdmin,setIsAdmin] =useState(false);
+    const role='doctor'
     return(
-        <>
+            <>
         <nav className={cx('nav')}>
             <ul className={cx('container')}>
                 <li className={cx('tab')}>
-                    <Link to="/">Trang chủ</Link>
+                    <Link to="/homepage">Trang chủ</Link>
                 </li>
                 <li  className={cx('tab')}>
                     <Link to="#">Dịch vụ</Link>
@@ -27,8 +23,8 @@ function Navbar() {
                 <li className={cx('tab')}>
                     <Link to="#">Blog</Link>
                 </li>
-                <li className={cx('tab admin',(isAdmin)?'turn':'off')} >
-                    <Link to="/admin">Quản lý</Link>
+                <li className={cx('tab admin',(true)?'turn':'off')} >
+                    <Link to={`/admin/${role}`}>Quản lý</Link>
                 </li>
             </ul>
         </nav>
