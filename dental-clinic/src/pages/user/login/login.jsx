@@ -2,7 +2,8 @@ import React, { useRef } from "react";
 import authApi from "../../../api/authApi";
 import { getCookie, setCookie } from "../../../utils/utils";
 import "./index.scss";
-
+  var name = 1;
+export let userName=name;
 export default function Login() {
   const usernameRef = useRef();
   const passwordRef = useRef();
@@ -44,6 +45,7 @@ export default function Login() {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            onChange={this.ha}
           />
         </div>
 

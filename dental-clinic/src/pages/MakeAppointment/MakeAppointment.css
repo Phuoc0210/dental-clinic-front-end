@@ -1,14 +1,19 @@
 .form {
     border-radius: 5px;
     background-color: #f2f2f2;
-    display:block;
-   
+    display: block;  
 }
-.FormContent{
-max-width: 500px;
+.form_content{
+    flex:1;
+    margin-left: 10px;
 }
+
 .container{
 display: flex;
+}
+.Logo{
+    flex:1;
+    display: flex;
 }
     input[type=text], input[type=tel], input[type=date], input[type=time], textarea  {
     width: 100%;
@@ -41,19 +46,16 @@ input[type=submit]{
 input[type=submit]:hover {
     background-color: #45a049;
 }
-/* .Logo{
-   text-align: center;
-   width: 50%;
-} */
 
 
-/* .Logo, */
  .Slider{
 
     display:block;
-    margin: 0px 30px;
+    width: 90%;
+    margin-left: 0px;
+    justify-content: center;
 }
-h2 center{
+h2, h1 {
     color: rgb(33, 177, 226);
 }
 .ImgLogo{

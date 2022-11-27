@@ -47,6 +47,7 @@ export const service = [
         ImageUrl: require ('./assets/service6.jpg')
     }
 ]
+export const banggia = require('./assets/gia.png');
 export const LoGo={
     ImgLogo : require ('./assets/Logo.png')
 }
@@ -55,56 +56,57 @@ export const Blog=[
         categoryName:"Blog",
         BlogName:"KIẾN THỨC VỀ PHỤC HỒI DOUBLE - MODE",
         Date:"19/11/2022",
-        ImageUrl: require ('./assets/BLOG1.jpg'),
+        ImageUrl: require ('./assets/imgblog5.jpg'),
     },
     {
         categoryName:"Blog",
         BlogName:"ÁP DỤNG KỸ THUẬT PHỤC HÌNH RĂNG",
         Date:"15/11/2022",
-        ImageUrl: require ('./assets/BLOG2.jpg'),
+        ImageUrl: require ('./assets/imgblog2.jpg'),
     },
     {
         categoryName:"Blog",
         BlogName:"LỢI ÍCH CỦA CẠO VÔI RĂNG",
         Date:"12/11/2022",
-        ImageUrl: require ('./assets/BLOG3.jpg'),
+        ImageUrl: require ('./assets/imgblog3.jpg'),
     },
     {
         categoryName:"Blog",
         BlogName:"TỐ CHẤT QUAN TRỌNG CỦA NHA SỸ",
         Date:"05/11/2022",
-        ImageUrl: require ('./assets/BLOG4.jpg'),
+        ImageUrl: require ('./assets/imgblog4.jpg'),
     },
     {
         categoryName:"Blog",
         BlogName:"SƠ LƯỢC VỀ QUY TRÌNH LÀM RĂNG SỨ",
         Date:"01/11/2022",
-        ImageUrl: require ('./assets/BLOG5.jpg'),
+        ImageUrl: require ('./assets/rangsu.jpg'),
     },
     {
         categoryName:"Blog",
         BlogName:"TUYỂN SINH THỰC TẬP VIÊN",
         Date:"19/10/2022",
-        ImageUrl: require ('./assets/BLOG6.jpg'),
+        ImageUrl: require ('./assets/imgblog6.png'),
     },
     {
         categoryName:"Blog",
         BlogName:"CÔNG NGHỆ SCAN KỸ THUẬT SỐ LÀ GÌ ?",
         Date:"18/10/2022",
-        ImageUrl: require ('./assets/BLOG7.jpg'),
+        ImageUrl: require ('./assets/imgblog7.jpg'),
     },
     {
         categoryName:"Blog",
         BlogName:"TÌM HIỂU VỀ QUY TRÌNH NIỀNG RĂNG",
         Date:"09/10/2022",
-        ImageUrl: require ('./assets/BLOG8.jpg'),
+        ImageUrl: require ('./assets/imgblog8.jpg'),
     }
 ]
 export const Slider={
-    SliderBlog:require('./assets/SliderBlog.jpg'),
+    SliderBlog:require('./assets/ImgSliderBlog.png'),
     SliderDV:require('./assets/SliderDichVu.jpg'),
     SliderForm1:require('./assets/form4.png'),
     SliderForm2:require('./assets/form6.jpg'),
     SliderForm3:require('./assets/imgTrongrang.jpg'),
-    ImgForm:require('./assets/nhasi.jpg')
+    ImgForm:require('./assets/nhasi.jpg'),
+    SliderPrice:require('./assets/SliderPrice.png')
 }
