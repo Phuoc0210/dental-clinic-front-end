@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import classNames from 'classnames/bind'
 import navbarStyle from './NavbarStyle.css'
 import {Link} from 'react-router-dom'
+import { useStore } from '../../store'
 const cx = classNames.bind(navbarStyle);
 
 function Navbar() {
-    const [isAdmin,setIsAdmin] =useState(false);
-    const role='doctor'
+    const [state, dispath] = useStore()
     return(
             <>
         <nav className={cx('nav')}>
@@ -23,8 +23,8 @@ function Navbar() {
                 <li className={cx('tab')}>
                     <Link to="#">Blog</Link>
                 </li>
-                <li className={cx('tab admin',(true)?'turn':'off')} >
-                    <Link to={`/admin/${role}`}>Quản lý</Link>
+                <li className={cx('tab admin',(state.isAdmin)?'turn':'off')} >
+                    <Link to={`/admin/${state.userRole}`}>Quản lý</Link>
                 </li>
             </ul>
         </nav>

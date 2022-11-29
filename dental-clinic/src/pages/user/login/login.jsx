@@ -1,13 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { createContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import authApi from "../../../api/authApi";
 import { getCookie, setCookie } from "../../../utils/utils";
 import "./index.scss";
+import { useStore, actions } from "../../../store";
+
+export const DataContext = createContext()
 
 export default function Login() {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
+  const [state, dispath] = useStore()
+  console.log(state)
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -24,8 +29,16 @@ export default function Login() {
       };
       setCookie(`token`, JSON.stringify(cookie));
       getCookie(`token`);
-      if (resp.status == 200) {
-        navigate('/homepage', { state: acc_un })
+      if (resp.status === 200 && resp.data.code === 1) {
+        dispath(actions.setIsLogin(true))
+        dispath(actions.setUserName(acc_un))
+        dispath(actions.setUserRole(resp.data.data.role))
+        if(resp.data.data.role !== "patient"){
+          dispath(actions.setIsAdmin(true))
+        }
+        navigate('/homepage')
+      } else{
+        navigate('/login')
       }
     } catch (error) {
       console.log(error);
@@ -33,7 +46,8 @@ export default function Login() {
   };
 
   return (
-    <>
+
+      <>
       <div className="Title">Đăng nhập</div>
       <form
         className="FormLogin"

@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import classNames from 'classnames/bind'
 import {useEffect,useState} from 'react'
 import RecordTableStyle from './RecordTableStyle.css'
 import { useParams } from 'react-router-dom'
 import {TiDelete} from 'react-icons/ti'
 import {BsFillEyeFill} from 'react-icons/bs'
-
+import Dialog from '../Dialog/Dialog'
 const cx = classNames.bind(RecordTableStyle);
 
-function RecordrecordTable(id){
+function RecordrecordTable(){
+    const [dialog,setDialog] = useState({
+        message:'',
+        isLoading: false
+    })
+
     const url = 'https://dental-clinic-project.herokuapp.com/api/record/recordsOfPatient'
     const [records,setRecords] = useState([])
     const param = useParams();
@@ -30,11 +35,51 @@ function RecordrecordTable(id){
             }
         )
     },[param.id])
-    function handleDelete(e){   
-       const node = e.target.parentElement.closest('tr')
-       const newList = records.filter(record => record['rec_id'] != node.id )
-       setRecords(newList)
+
+    const idRecord = useRef()
+    const handleDialog = (message, isLoading) =>{
+        setDialog(
+            {
+                message,
+                isLoading,
+            }
+        )
     }
+    function handleDelete(id){
+        handleDialog( "Bạn có chắc muốn xóa bệnh án này?", true)
+        idRecord.current = id
+    }
+    function callApiDeleteRecord(id){
+        const url = 'https://dental-clinic-project.herokuapp.com/api/record/delete'
+        const data = { "rec_id": id }
+         const option = {
+             method: "POST",
+             
+             headers: {
+                     "Content-Type": "application/json"
+                     
+             },
+             body: JSON.stringify(data)
+         }
+         fetch( url, option)
+             .then(response => response.json())
+             .then( result => {
+                 console.log(result)
+             }
+         )
+    }
+    const areSureDelete = (chosoe) => {
+        if(chosoe){
+            const newList = records.filter(record => record['rec_id'] != idRecord.current )
+            setRecords(newList)
+            //callApiDeleteRecord(idRecord.current)
+            handleDialog( "", false)
+        } else{
+            handleDialog( "", false)
+        }
+    }
+
+
     function handleEdit(e){
         
     }
@@ -56,7 +101,7 @@ function RecordrecordTable(id){
                 <tbody>
                     {  
                         records.map( (record, index) => (
-                            <tr key={record['rec_id']} id={record['rec_id']} 
+                            <tr key={record['rec_id']} 
                             style={{backgroundColor: index % 2 != 0 ? "DCF2FF" : "#B8E3FF"}}
                             >
                                 <td>{record['rec_id']}</td>
@@ -65,7 +110,7 @@ function RecordrecordTable(id){
                                 <td>{record['rec_date']}</td>
                                 <td>{record['rec_lastmodified']}</td>
                                 <td className={cx('delete-cell')}
-                                    onClick={handleDelete}>
+                                    onClick={() => handleDelete(record['rec_id'])}>
                                     <TiDelete className={cx('icon')}/>
                                 </td>
                                 <td className={cx('view-cell')}
@@ -77,6 +122,7 @@ function RecordrecordTable(id){
                     }
                 </tbody>
             </table>
+            { dialog.isLoading && <Dialog onDialog={areSureDelete} message = {dialog.message}/>}
         </div>
     )
 }

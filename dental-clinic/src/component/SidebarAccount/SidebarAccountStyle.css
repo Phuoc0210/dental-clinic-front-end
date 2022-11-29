@@ -29,6 +29,12 @@ ul li:hover a{
 .option{
 	padding-left: 8px;
 }
+.option:hover{
+	font-size: 18px;
+	padding-left: 4px;
+	color: white;
+	background-color: rgb(22, 120, 203);
+}
 .menu{
 	margin: 0px;
 	padding: 0px;

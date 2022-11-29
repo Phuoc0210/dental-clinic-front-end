@@ -3,30 +3,46 @@ import HistoryMATableStyle from './HistoryMATableStyle.css'
 import classNames from "classnames/bind";
 import { useState} from "react";
 import { useEffect } from "react";
+import { useStore } from "../store";
 const cx = classNames.bind(HistoryMATableStyle);
 
 function HistoryMATable({userID}){
-    const url = 'https://dental-clinic-project.herokuapp.com/api/appointment/get-all-appointments'
-    const [appoitments,setAppoitments] = useState([])
-    const data =
+    const [state, dispath] = useStore()
+    const url1 = 'https://dental-clinic-project.herokuapp.com/api/authentication/get-profile'
+    const data1 = 
     {
-        "patient_id": 1
+        "username": state.userName
     }
-    const option = {
-            method: "POST", 
+    const option1 = {
+            method: "POST",
+           
             headers: {
                  "Content-Type": "application/json"
+                 
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data1)
     }
+    const url = 'https://dental-clinic-project.herokuapp.com/api/appointment/get-all-appointments'
+    const [appoitments,setAppoitments] = useState([])
     useEffect(()=>{
-        fetch( url, option)
+        fetch( url1, option1)
             .then(response => response.json())
-            .then( appoitments => {
-                console.log(appoitments)
-                setAppoitments(appoitments.data)
+            .then( account => account.data
+            ).then( data =>{
+                fetch( url, {
+                    method: "POST", 
+                    headers: {
+                         "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({"patient_id": data.id})
+            })
+                .then(response => response.json())
+                .then( appoitments => {
+                    setAppoitments(appoitments.data)
+                }
+            )
             }
-        )
+            )
     },[])
     return(
         <div className={cx('wrapper-table')}>
