@@ -9,7 +9,6 @@ import FormContainer from "../pages/user/login/index"
 const publicRoute = [
     { path: '/', component: HomepageIndex, layout: 'default'},
     { path: '/homepage', component: HomepageIndex, layout: 'default'},
-    { path: '/homepage/:userName', component: HomepageIndex, layout: 'default'},
     { path: '/login', component: FormContainer},
     { path: '/admin/admin/record/:id', component: Medicalrecords},
     { path: '/admin/doctor/record/:id', component: DoctorRecordPage},

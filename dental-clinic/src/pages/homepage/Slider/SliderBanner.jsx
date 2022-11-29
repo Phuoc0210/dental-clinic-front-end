@@ -7,8 +7,7 @@ import { BsFillCalendar2CheckFill } from "react-icons/bs";
 export default function SliderBanner() {
   return (
     <>
-      {/* <div style={{ marginTop: "120px" }}></div> */}
-
+    <div style={{ height: "40px", backgroundColor: "#ffffff"}}></div>
       <div
         style={{
           zIndex: "100",
