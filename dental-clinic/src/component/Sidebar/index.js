@@ -23,13 +23,13 @@ function Sidebar() {
                     </Link>
                 </li>
                 <li>
-                    <Link className={cx('option')} to="#" >
+                    <Link className={cx('option')} to="/admin/admin/appointment" >
                         <BsIcons.BsFillCalendarFill/> 
                         <span> Quản lý đặt lịch</span>
                     </Link>
                 </li>
                 <li>
-                    <Link className={cx('option')} to="/admin" >
+                    <Link className={cx('option')} to="/admin/admin" >
                         <BsIcons.BsFillFileEarmarkFill/> 
                         <span> Quản lý hồ sơ bệnh án</span>
                     </Link>

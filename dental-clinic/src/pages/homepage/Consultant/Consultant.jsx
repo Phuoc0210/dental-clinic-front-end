@@ -24,8 +24,8 @@ export default function Consultant() {
           zIndex: "100",
           position: "fixed",
           top: "0%",
-          left: "60px",
-          top: "400px",
+          left: "50px",
+          top: "500px",
           fontSize: "40px",
         }}
       >

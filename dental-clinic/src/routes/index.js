@@ -1,6 +1,13 @@
+import BlogPage from "../component/Blog/BlogPage"
+import MakeAppointment from "../component/MakeAppointment"
+import PricePage from "../component/PriceService/PagePrice"
+import ServicePage from "../component/Services/ServicePageIndex"
 import HistoryMakeAppointment from "../pages/account/HistoryMakeAppointment"
+import AppointmentListPage from "../pages/AdminAppointment/AppointmentListPage"
+import PatientListPage from "../pages/AdminAppointment/PatientListPage"
 import Medicalrecords from "../pages/adminmedicalrecords/Medicalrecords"
 import PatientPage from "../pages/adminmedicalrecords/PatientPage"
+import DetailRecord from "../pages/DetailRecord"
 import DoctorPatientPage from "../pages/Doctor/DoctorPatientPage"
 import DoctorRecordPage from "../pages/Doctor/DoctorRecordPage"
 import HomepageIndex from "../pages/homepage/homepageIndex"
@@ -14,7 +21,14 @@ const publicRoute = [
     { path: '/admin/doctor/record/:id', component: DoctorRecordPage},
     { path: '/account/history-make-appointment', component: HistoryMakeAppointment},
     { path: '/admin/admin', component: PatientPage},
-    { path: '/admin/doctor', component: DoctorPatientPage}
+    { path: '/admin/admin/appointment', component: PatientListPage},
+    { path: '/admin/admin/appointment/:id', component: AppointmentListPage},
+    { path: '/admin/doctor', component: DoctorPatientPage},
+    { path: '/admin/admin/record/detail/:id', component: DetailRecord},
+    { path: '/makeappointment', component: MakeAppointment},
+    { path: '/service', component: ServicePage, layout: 'default'},
+    { path: '/price', component: PricePage, layout: 'default'},
+    { path: '/blog', component: BlogPage, layout: 'default'}
 ]
 
 export {publicRoute}

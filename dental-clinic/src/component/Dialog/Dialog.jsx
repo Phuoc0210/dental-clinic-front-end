@@ -1,3 +1,5 @@
+import {RiErrorWarningFill} from 'react-icons/ri'
+
 function Dialog({ message, onDialog }) {
     
 
@@ -10,47 +12,82 @@ function Dialog({ message, onDialog }) {
                 right: '0',
                 bottom: '0',
                 backgroundColor: 'rgb(0,0,0,0.5)',
-
             }
         }>
             <div style={{
                 display: 'flex',
+                width: '400px',
                 flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent:'center',
                 position: 'absolute',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%,-50%)',
                 backgroundColor: 'white',
-                padding: '50px',
+                
             }}>
-                <h4 style={{
-                    color: '#111'
-                }}>{message}</h4>
                 <div style={{
-                    display: 'flex', alignItems:'center', color:'black'
+                    color: '#111',  
+                    backgroundColor: '#D2D7D3',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: "center",   
+                }}>
+                    <div style={{
+                    color: '#25373D',
+                    fontSize: '16px',
+                    padding: '5px',
+                    fontWeight: 'bold'
+                }}>Confirm</div>
+                <button onClick={() => onDialog(false)}
+                style={
+                    {
+                        width: '10%',   
+                        padding: '5px',
+                        backgroundColor: 'red',
+                        border: 'none',
+                        color: 'white'
+                    }
+                }>
+                    x
+                </button>
+                </div>
+                <div style={{
+                        padding: '24px',
+                        width: '400px',
+                         
+                    }}>
+                    <div >
+                        <RiErrorWarningFill style={{
+                        height: '44px',
+                        width: '44px',
+                        color: '#4387B5'
+                    }}/> 
+                        <span style={{
+                        color: '#111',                       
+                    }}> {message}</span>
+                    </div>
+                    </div>
+                <div style={{
+                    display: 'flex', alignItems:"end", color:'black', justifyContent: 'end'
                 }}>
                     <button onClick={() => onDialog(true)}
                     style={{
-                        backgroundColor:'red',
-                        color:'white',
                         padding: '10px',
-                        width: "100px",
-                        marginRight: '4px',
-                        border: 'none',  
+                        width: "80px",
+                        alignItems: 'center',
+                        margin: '4px',
+                        border: '#4387B5 3px solid',
                         borderRadius: '8px'
-                    }}>Yes</button>
+                    }}>OK</button>
                     <button onClick={() => onDialog(false)}
                     style={{
-                        backgroundColor:'blue',
-                        color:'white', 
                         padding: '10px',
-                        width: "100px",
-                        marginLeft: '4px', 
-                        borderColor: 'blue',
+                        width: "80px",
+                        alignItems: 'center',
+                        margin: '4px', 
+                        border: '#8199A3 2px solid',
                         borderRadius: '8px'
-                    }}>No</button>
+                    }}>Cancel</button>
                 </div>
 
             </div>

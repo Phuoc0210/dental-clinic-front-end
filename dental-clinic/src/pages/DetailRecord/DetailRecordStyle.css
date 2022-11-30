@@ -1,0 +1,145 @@
+/*.name-form{
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 20px;
+  }
+
+.information-form{
+	background-color: blue;
+	border: 1px solid black;
+	border-radius: 10px;
+	width: 68%;
+	line-height: 35px;
+	color: white;
+	font-size: 16px;
+	margin-left: 10px;
+	padding-bottom: 6px;
+}
+
+.col-1{
+	width: 25%;
+}
+
+label{
+	margin-left: 20px;
+	font-size: 17px;
+	font-weight:500;
+}
+
+input{
+	margin-left: 10px;
+	background-color: rgb(214, 247, 255);
+}
+
+.submit-button{
+	background-color: rgb(54, 244, 99);
+	border: none;
+	border-radius: 15px;
+	font-size: 19px;
+	font-weight: bold;
+	margin-left: 61%;
+	margin-top: 5px;
+	margin-bottom: 15px; 
+	width: 90px;
+	height: 35px;
+	color: rgb(255, 255, 255);
+	box-shadow: inset 0 0 10px#008907;
+}
+
+input:hover{
+	background-color: rgb(174, 255, 250);
+	border: 2px solid rgb(45, 155, 228);
+	border-radius: 4px;
+	color: rgb(0, 0, 0);
+  }
+
+.submit-button:hover{
+	background-color: rgb(190, 255, 205);
+	border: 1.5px solid rgb(0, 0, 0);
+	border-radius: 15px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 61%;
+	margin-top: 5px;
+	margin-bottom: 15px; 
+	color: rgb(0, 0, 0);
+	box-shadow: inset 0 0 10px#008907;
+}
+
+.sex-input{
+	margin-left: 10px;
+	height: 22px;
+	box-shadow: 2px 2px inset ;
+	background-color: rgb(214, 247, 255);
+}
+.sex-input:hover{
+	background-color: rgb(174, 255, 250);
+	border: 2px solid rgb(45, 155, 228);
+	box-shadow: 2px 2px inset ;
+	height: 24px;
+	border-radius: 4px;
+	color: rgb(0, 0, 0);
+}
+.name-input{
+	width: 68%;
+}
+
+.type-disease-input{
+	background-color: rgb(214, 247, 255);
+	margin-left: 10px;
+	width: 94%;
+	height: 22px;
+	box-shadow: 2px 2px inset ;
+}
+
+.type-disease-input:hover{
+	background-color: rgb(174, 255, 250);
+	border: 2px solid rgb(45, 155, 228);
+	box-shadow: 2px 2px inset ;
+	height: 24px;
+	border-radius: 4px;
+	color: rgb(0, 0, 0);
+}
+
+.insurance-input{
+	width: 240px;
+	margin-right: 60px;
+}
+
+.birth-input{
+	width: 49%;
+}
+.type-input{
+	width: 93%;
+}
+
+.predict-in-input{
+	width: 93%;
+	height: 35px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.predict-out-input{
+	width: 93%;
+	height: 35px;
+	margin-bottom: 15px;
+}
+
+.summary-input{
+	width: 93%;
+	height: 50px;
+	margin-bottom:15px;
+}
+
+.ethnic-col{
+	margin-left: 24.9px;
+}
+
+.re-exam-col{
+	margin-left: 21px;
+}
+
+.ethnic-input, .subject-input{
+	width: 171px;
+}*/

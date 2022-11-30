@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import classNames from 'classnames/bind'
 import {useEffect,useState} from 'react'
 import RecordTableStyle from './RecordTableStyle.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import {TiDelete} from 'react-icons/ti'
 import {BsFillEyeFill} from 'react-icons/bs'
 import Dialog from '../Dialog/Dialog'
@@ -13,7 +13,7 @@ function RecordrecordTable(){
         message:'',
         isLoading: false
     })
-
+    const navigate = useNavigate()
     const url = 'https://dental-clinic-project.herokuapp.com/api/record/recordsOfPatient'
     const [records,setRecords] = useState([])
     const param = useParams();
@@ -81,7 +81,7 @@ function RecordrecordTable(){
 
 
     function handleEdit(e){
-        
+        navigate(`/admin/admin/record/detail/${param.id}`)
     }
     return(
         <div className={cx('wrapper-table')}>

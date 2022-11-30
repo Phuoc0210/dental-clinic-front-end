@@ -4,17 +4,23 @@ import authApi from "../../../api/authApi";
 import { getCookie, setCookie } from "../../../utils/utils";
 import "./index.scss";
 import { useStore, actions } from "../../../store";
+import LoginStyle from "./index.scss";
+import {RiErrorWarningFill} from 'react-icons/ri'
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(LoginStyle);
 
 export const DataContext = createContext()
 
 export default function Login() {
+  const [isSubmit,setIsSubmit] = useState(false)
+  const [loginSuccessfully,setLoginSuccessfully] = useState(false)
   const usernameRef = useRef();
   const passwordRef = useRef();
 
   const [state, dispath] = useStore()
   console.log(state)
   const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const acc_un = usernameRef.current.value;
@@ -36,7 +42,10 @@ export default function Login() {
         if(resp.data.data.role !== "patient"){
           dispath(actions.setIsAdmin(true))
         }
-        navigate('/homepage')
+        setLoginSuccessfully(true)
+        setTimeout(() => {
+          navigate('/homepage')
+        }, 1000);
       } else{
         navigate('/login')
       }
@@ -46,66 +55,76 @@ export default function Login() {
   };
 
   return (
-
-      <>
-      <div className="Title">Đăng nhập</div>
+      <div className={cx("wrapperFormLogin")}>
+      <div className={cx("Title")}>Đăng nhập</div>
       <form
-        className="FormLogin"
+        className={cx("FormLogin")}
         onSubmit={(e) => {
           handleSubmit(e);
         }}
       >
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
+        <div className={cx("mb-3")}>
+          <label htmlFor="exampleInputEmail1" className={cx("form-label")}>
             Tên tài khoản
           </label>
           <input
             ref={usernameRef}
-            className="form-control"
+            className={cx("form-control")}
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            placeholder="Username"
           />
         </div>
 
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
+        {isSubmit && !usernameRef.current.value  &&<label className='warning'> <RiErrorWarningFill/> Chưa điền thông tin tài khoản!</label>} 
+
+        <div className={cx("mb-3")}>
+          <label htmlFor="exampleInputPassword1" className={cx("form-label")}>
             Mật khẩu
           </label>
           <input
             ref={passwordRef}
             type="password"
-            className="form-control"
+            className={cx("form-control")}
             id="exampleInputPassword1"
+            placeholder="Password"
           />
         </div>
 
-        <div className="mb-3 form-check">
+        {isSubmit && !passwordRef.current.value && <label className='warning'> <RiErrorWarningFill/> Chưa điền mật khẩu!</label>} 
+
+        <div className={cx("mb-3 form-check")}>
           <input
             type="checkbox"
-            className="form-check-input"
+            className={cx("form-check-input")}
             id="exampleCheck1"
           />
-          <label className="form-check-label" htmlFor="exampleCheck1">
+          <label className={cx("form-check-label")} htmlFor="exampleCheck1" style={{marginBottom: '20px'}}>
             Lưu mật khẩu
           </label>
         </div>
 
-        <button type="submit" className="btn btn-info CustomSubmit">
+        <button type="submit" className={cx("btn btn-info CustomSubmit")} onClick={() => (setIsSubmit(true))}>
           Đăng nhập
         </button>
         <br />
 
-        <div className="Spacer"></div>
-        <a className="CustomForgetPassword">
-          <div className="CustomForgetPasswordText">Quên mật khẩu?</div>
+        <div className={cx("Spacer")}></div>
+        <a className={cx("CustomForgetPassword")}>
+          <div className={cx("CustomForgetPasswordText")}>Quên tài khoản/ mật khẩu?</div>
         </a>
 
         <br />
-        <button onClick={{}} className="btn btn-info CustomSubmit">
+        <button onClick={{}} className={cx("btn btn-info CustomSubmit")}>
           Tạo tài khoản mới
         </button>
-        <div className="Spacer"></div>
+        <div className={cx("Spacer")}></div>
       </form>
-    </>
+      {
+          (isSubmit && passwordRef.current.value && passwordRef.current.value && !loginSuccessfully &&
+            <label className='warning'> <RiErrorWarningFill/> Đăng nhập thất bại!</label>
+          )
+      }
+      </div>
   );
 }
