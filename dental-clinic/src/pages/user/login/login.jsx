@@ -43,9 +43,7 @@ export default function Login() {
           dispath(actions.setIsAdmin(true))
         }
         setLoginSuccessfully(true)
-        setTimeout(() => {
-          navigate('/homepage')
-        }, 1000);
+        navigate('/homepage')
       } else{
         navigate('/login')
       }
