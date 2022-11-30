@@ -2,7 +2,6 @@ import "./App.css";
 import {Routes,Route} from 'react-router-dom'
 import {publicRoute} from './routes'
 import {DefaultLayout, AdminLayout} from './component/Layout'
-import { Fragment } from "react";
 function App() {
 
   return (

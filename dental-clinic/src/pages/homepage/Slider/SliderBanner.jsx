@@ -3,8 +3,18 @@ import Slider1 from "../../../assets/homepageBG1.png";
 import Slider2 from "../../../assets/homepageBG2.png";
 import Slider3 from "../../../assets/homepageBG3.png";
 import { BsFillCalendar2CheckFill } from "react-icons/bs";
-
+import { useNavigate } from "react-router-dom";
+import { useStore } from "../../../store";
 export default function SliderBanner() {
+  const [state, dispath] =useStore()
+  const navigate = useNavigate()
+  const handleClick = () => {
+    if(state.isLogin){
+      navigate('/makeappointment')
+    } else{
+      navigate('/login')
+    }
+  }
   return (
     <>
     <div style={{ height: "40px", backgroundColor: "#ffffff"}}></div>
@@ -12,7 +22,7 @@ export default function SliderBanner() {
         style={{
           zIndex: "100",
           position: "fixed",
-          top: "470px",
+          top: "550px",
           right: "60px",
           fontSize: "40px",
           color: "#115d9d",
@@ -25,12 +35,12 @@ export default function SliderBanner() {
         style={{
           zIndex: "100",
           position: "absolute",
-          top: "550px",
+          top: "600px",
           right: "190px",
           fontSize: "40px",
         }}
       >
-        <button
+        <button onClick={() => handleClick()}
           type="button"
           class="btn customOrderBtn"
           style={{

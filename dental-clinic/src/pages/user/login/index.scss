@@ -5,50 +5,80 @@ body{
     // overflow: hidden;
     background-image: url("../../../assets/bg.webp");
 }
-
-.Container{
-    margin: 100px 400px;
-    background-color: #b007b6;
-    padding: 20px 40px;
-
-    .LogoContainer{
+.loginWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    .loginContainer{
+        width: 65%;
+        background-color: #FFFFF7;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 50px 5%;
         display: flex;
-        justify-content: center;
-
-        .CustomLogo{
-            width: 100px;
-            display: block;
-            left: auto;
-            right: auto;
-        }
-    }
-
-    .Title{
-        font-weight: 500;
-        font-size: 2rem;
-        text-align: center;
-        color: #fff;
-    }
-
-    .FormLogin{
-        .CustomSubmit{
-            width: 100%;
-            color: #fff;
-            background-color: #fb2fc8d3;
-        }
-        .Spacer{
-            margin-top: 1rem;
-        }
-        .CustomForgetPassword{
+        border-radius: 16px;
+        margin-top: 50px;
+        align-items: center;
+        .LogoContainer{
             display: flex;
-            justify-content: flex-end;
-            cursor: pointer;
-            color: #fff;
-
-            .CustomForgetPasswordText{
-                color: "#fff";
+            justify-content: center;
+            width: 40%;
+            .CustomLogo{
+                width: 80%;
+                height: 80%;
             }
         }
-    }
+       .wrapperFormLogin{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 60%;
+            .Title{
+                font-weight: bold;
+                letter-spacing: 4px;
+                font-size: 2rem;
+                text-align: center;
+                color: #111;
+            }
 
+            .FormLogin{
+                width: 80%;
+                .form-label{
+                    font-size: 12px;
+                }
+                .mb-3{
+                    margin: 0px!important;
+                    margin-top: 16px!important;
+                }
+                .CustomSubmit{
+                    margin: 0px;
+                    width: 100%;
+                    color: #fff;
+                    background-color: #1DABB8;
+                }
+                .CustomSubmit:hover{
+                    background-color: #3D8EB9;
+                }
+                .Spacer{
+                    margin-top: 1rem;
+                }
+                .form-check-label{
+                    font-size: 14px;
+                }
+                .CustomForgetPassword{
+                    display: flex;
+                    justify-content: flex-end;
+                    cursor: pointer;
+                    color: #111;
+
+                    .CustomForgetPasswordText{
+                            color: #60646D;
+                            font-size: 14px;
+                    }
+                }
+            }
+       }
+
+    }
 }

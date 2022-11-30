@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.SliderDV{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.card-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.service-item{
+    background-color: aliceblue;
+}
+.TitleDV{
+    color: rgb(33, 177, 226);
+    text-shadow: 1px;
+}
+.content{
+    text-align: center;
+}
+.Logo{
+display: inline;
+margin:20px;
+}
+.showmore{
+    margin: 0px auto;
+    width:150px;
+    height: 35px;
+    border-radius : 20px;
+    background-color: aliceblue;
+}
+.card-body{
+    text-align: center;
+}
+.service-item {
+    padding: 10px;
+}
+
+ .ImageSV .card-img-top, .img-top {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    border-radius: 50%;
+}
+.ImageSV {
+    margin: 15px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .row .card{
+    width:80%;
+    margin:auto;
+    padding: 5px;
+    margin-bottom:40px;
+    border-radius: 10%;
+
+}
+

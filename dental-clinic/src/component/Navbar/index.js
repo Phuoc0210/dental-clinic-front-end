@@ -15,13 +15,13 @@ function Navbar() {
                     <Link to="/homepage">Trang chủ</Link>
                 </li>
                 <li  className={cx('tab')}>
-                    <Link to="#">Dịch vụ</Link>
+                    <Link to="/service">Dịch vụ</Link>
                 </li>
                 <li className={cx('tab')}>
-                    <Link to="#">Bảng giá</Link>
+                    <Link to="/price">Bảng giá</Link>
                 </li>
                 <li className={cx('tab')}>
-                    <Link to="#">Blog</Link>
+                    <Link to="/blog">Blog</Link>
                 </li>
                 <li className={cx('tab admin',(state.isAdmin)?'turn':'off')} >
                     <Link to={`/admin/${state.userRole}`}>Quản lý</Link>

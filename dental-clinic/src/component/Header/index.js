@@ -28,9 +28,9 @@ function Header() {
                     </button>
                 </div>
                 <div className={cx('btns')}>
-                    <button className={cx("btn btncontact")} >Contact</button>
+                    <button className={cx("btn btncontact")} >Liên hệ</button>
                     <button className={cx('btn btnsignin',(state.isLogin)?'off':'turn')} 
-                            onClick={() => (navigate('/login'))}>Sign In</button>
+                            onClick={() => (navigate('/login'))}>Đăng nhập</button>
                     <button className={cx('btnavatar',(state.isLogin)?'turn':'off')}><BsFillPersonFill className={cx('avatar')}
                             onClick={()=>(navigate(`/account/history-make-appointment`))}/></button>
                 </div>
