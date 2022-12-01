@@ -80,8 +80,8 @@ function RecordrecordTable(){
     }
 
 
-    function handleEdit(e){
-        navigate(`/admin/admin/record/detail/${param.id}`)
+    function handleView(recID){
+        navigate(`/admin/admin/record/detail/view/${param.id}/${recID}`)
     }
     return(
         <div className={cx('wrapper-table')}>
@@ -114,7 +114,7 @@ function RecordrecordTable(){
                                     <TiDelete className={cx('icon')}/>
                                 </td>
                                 <td className={cx('view-cell')}
-                                    onClick={handleEdit} >
+                                    onClick={() => handleView(record['rec_id'])} >
                                         <BsFillEyeFill className={cx('icon')}/>
                                 </td>
                             </tr>

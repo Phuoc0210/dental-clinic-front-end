@@ -14,7 +14,7 @@ export const DataContext = createContext()
 
 export default function Login() {
   const [isSubmit,setIsSubmit] = useState(false)
-  const [loginSuccessfully,setLoginSuccessfully] = useState(false)
+  const [loginSuccessfully,setLoginSuccessfully] = useState(true)
   const usernameRef = useRef();
   const passwordRef = useRef();
 
@@ -36,15 +36,16 @@ export default function Login() {
       setCookie(`token`, JSON.stringify(cookie));
       getCookie(`token`);
       if (resp.status === 200 && resp.data.code === 1) {
+        setLoginSuccessfully(true)
         dispath(actions.setIsLogin(true))
         dispath(actions.setUserName(acc_un))
         dispath(actions.setUserRole(resp.data.data.role))
         if(resp.data.data.role !== "patient"){
           dispath(actions.setIsAdmin(true))
         }
-        setLoginSuccessfully(true)
         navigate('/homepage')
       } else{
+        setLoginSuccessfully(false)
         navigate('/login')
       }
     } catch (error) {
