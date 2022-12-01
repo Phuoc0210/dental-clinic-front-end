@@ -1,145 +1,95 @@
-/*.name-form{
-	font-size: 32px;
-	font-weight: bold;
+.wrapper-detail-record{
+	width: 100%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.inner-detail-record{
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 20px;
 	margin-bottom: 20px;
-  }
-
-.information-form{
-	background-color: blue;
-	border: 1px solid black;
-	border-radius: 10px;
-	width: 68%;
-	line-height: 35px;
-	color: white;
-	font-size: 16px;
-	margin-left: 10px;
-	padding-bottom: 6px;
+	background-color:#E7E7E7;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	align-items: center;
 }
-
-.col-1{
+.title-detail-record{
+	align-items: center;
+	margin-top: 20px;
+	font-size: large;
+	font-weight: bold;
+}
+.container-detail-record{
+	width: 100%;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+.form-record{
+	display: flex;
+	flex-direction: column;
+	width: 96%;
+	margin: 2%;
+}
+.btn-submit-record{
+	background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50%;
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+.btn-submit-record:hover{
+	background-color: #45a049;
+}
+.container-dd{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding-right: 15px;
+}
+.gender-container{
+	display: flex;
 	width: 25%;
+	align-items: center;
 }
-
-label{
-	margin-left: 20px;
-	font-size: 17px;
-	font-weight:500;
+input[type='radio']{
+	height: 10%;
+	margin: 0px;
 }
-
-input{
-	margin-left: 10px;
-	background-color: rgb(214, 247, 255);
+.input-record{
+	width: 98%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 0px;
+    resize: vertical;
+} 
+.title-input-record{
+	font-size: 14px;
+	margin-top: 12px;
+	margin-right: 10px;
 }
-
-.submit-button{
-	background-color: rgb(54, 244, 99);
-	border: none;
-	border-radius: 15px;
-	font-size: 19px;
-	font-weight: bold;
-	margin-left: 61%;
-	margin-top: 5px;
-	margin-bottom: 15px; 
-	width: 90px;
-	height: 35px;
-	color: rgb(255, 255, 255);
-	box-shadow: inset 0 0 10px#008907;
-}
-
-input:hover{
-	background-color: rgb(174, 255, 250);
-	border: 2px solid rgb(45, 155, 228);
-	border-radius: 4px;
-	color: rgb(0, 0, 0);
-  }
-
-.submit-button:hover{
-	background-color: rgb(190, 255, 205);
-	border: 1.5px solid rgb(0, 0, 0);
-	border-radius: 15px;
-	font-size: 20px;
-	font-weight: bold;
-	margin-left: 61%;
-	margin-top: 5px;
-	margin-bottom: 15px; 
-	color: rgb(0, 0, 0);
-	box-shadow: inset 0 0 10px#008907;
-}
-
-.sex-input{
-	margin-left: 10px;
-	height: 22px;
-	box-shadow: 2px 2px inset ;
-	background-color: rgb(214, 247, 255);
-}
-.sex-input:hover{
-	background-color: rgb(174, 255, 250);
-	border: 2px solid rgb(45, 155, 228);
-	box-shadow: 2px 2px inset ;
-	height: 24px;
-	border-radius: 4px;
-	color: rgb(0, 0, 0);
-}
-.name-input{
-	width: 68%;
-}
-
-.type-disease-input{
-	background-color: rgb(214, 247, 255);
-	margin-left: 10px;
-	width: 94%;
-	height: 22px;
-	box-shadow: 2px 2px inset ;
-}
-
-.type-disease-input:hover{
-	background-color: rgb(174, 255, 250);
-	border: 2px solid rgb(45, 155, 228);
-	box-shadow: 2px 2px inset ;
-	height: 24px;
-	border-radius: 4px;
-	color: rgb(0, 0, 0);
-}
-
-.insurance-input{
-	width: 240px;
-	margin-right: 60px;
-}
-
-.birth-input{
-	width: 49%;
-}
-.type-input{
-	width: 93%;
-}
-
-.predict-in-input{
-	width: 93%;
-	height: 35px;
+.title-part{
+	margin-bottom: 0px;
 	margin-top: 10px;
-	margin-bottom: 15px;
 }
-
-.predict-out-input{
-	width: 93%;
-	height: 35px;
-	margin-bottom: 15px;
+.info-readonly{
+	width: 98%;
+	background-color: white;
+	padding: 4px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 0px;
+    resize: vertical;
 }
-
-.summary-input{
-	width: 93%;
-	height: 50px;
-	margin-bottom:15px;
-}
-
-.ethnic-col{
-	margin-left: 24.9px;
-}
-
-.re-exam-col{
-	margin-left: 21px;
-}
-
-.ethnic-input, .subject-input{
-	width: 171px;
-}*/

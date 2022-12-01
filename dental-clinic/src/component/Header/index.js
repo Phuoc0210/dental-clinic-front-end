@@ -11,7 +11,6 @@ const cx = classNames.bind(headerStyle);
 
 function Header() {
     const [state, dispath] = useStore()
-    console.log(state)
     const navigate = useNavigate()
     return(
             <header className={cx('wrapper-header')}>

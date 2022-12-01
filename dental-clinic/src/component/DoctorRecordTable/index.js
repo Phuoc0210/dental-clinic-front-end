@@ -2,13 +2,14 @@ import React from 'react'
 import classNames from 'classnames/bind'
 import {useEffect,useState} from 'react'
 import DoctorRecordTableStyle from './DoctorRecordTableStyle.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import {MdUpdate} from 'react-icons/md'
 import {BsFillEyeFill} from 'react-icons/bs'
 
 const cx = classNames.bind(DoctorRecordTableStyle);
 
 function DoctorRecordTable(id){
+    const navigate = useNavigate()
     const url = 'https://dental-clinic-project.herokuapp.com/api/record/recordsOfPatient'
     const [records,setRecords] = useState([])
     const param = useParams();
@@ -30,24 +31,26 @@ function DoctorRecordTable(id){
             }
         )
     },[param.id])
-    function handleDelete(e){   
-       const node = e.target.parentElement.closest('tr')
-       const newList = records.filter(record => record['rec_id'] != node.id )
-       setRecords(newList)
+    function handleAdd(){   
+        navigate(`/admin/admin/record/detail/add/${param.id}`)
     }
-    function handleEdit(e){
-        
+    function handleUpdate(recID){   
+        navigate(`/admin/admin/record/detail/update/${param.id}/${recID}`)
+    }
+    function handleView(recID){
+        navigate(`/admin/admin/record/detail/view/${param.id}/${recID}`)
     }
     return(
         <div className={cx('wrapper-table')}>
             <div className={cx('name-table')}>
                 Quản lý hồ sơ bệnh án
-            </div>
+            </div>  
             <div className={cx('search-create')}>
                 <input type='search' className={cx('input-search-doctor')}
                             placeholder='Nhập thông tim tìm kiếm...'>    
                         </input>
-                <button className={cx('btn-create')}>Thêm mới</button>
+                <button  onClick={() => handleAdd()}
+                className={cx('btn-create')}>Thêm mới</button>
             </div>
             <table className={cx('records-table')}>
                 <thead>
@@ -73,11 +76,11 @@ function DoctorRecordTable(id){
                                 <td>{record['rec_date']}</td>
                                 <td>{record['rec_lastmodified']}</td>
                                 <td className={cx('update-cell')}
-                                    onClick={handleDelete}>
+                                   onClick={() => handleUpdate(record['rec_id'])}>
                                     <MdUpdate className={cx('icon')}/>
                                 </td>
                                 <td className={cx('view-cell')}
-                                    onClick={handleEdit} >
+                                    onClick={() => handleView(record['rec_id'])} >
                                         <BsFillEyeFill className={cx('icon')}/>
                                 </td>
                             </tr>
