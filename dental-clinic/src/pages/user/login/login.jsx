@@ -14,7 +14,7 @@ export const DataContext = createContext()
 
 export default function Login() {
   const [isSubmit,setIsSubmit] = useState(false)
-  const [loginSuccessfully,setLoginSuccessfully] = useState(true)
+  const [isLoginSS,setIsLoginSS] = useState(false)
   const usernameRef = useRef();
   const passwordRef = useRef();
 
@@ -36,7 +36,6 @@ export default function Login() {
       setCookie(`token`, JSON.stringify(cookie));
       getCookie(`token`);
       if (resp.status === 200 && resp.data.code === 1) {
-        setLoginSuccessfully(true)
         dispath(actions.setIsLogin(true))
         dispath(actions.setUserName(acc_un))
         dispath(actions.setUserRole(resp.data.data.role))
@@ -45,7 +44,7 @@ export default function Login() {
         }
         navigate('/homepage')
       } else{
-        setLoginSuccessfully(false)
+        setIsLoginSS(true)
         navigate('/login')
       }
     } catch (error) {
@@ -72,6 +71,7 @@ export default function Login() {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Username"
+            onFocus={() => setIsLoginSS(false)}
           />
         </div>
 
@@ -87,6 +87,7 @@ export default function Login() {
             className={cx("form-control")}
             id="exampleInputPassword1"
             placeholder="Password"
+            onFocus={() => setIsLoginSS(false)}
           />
         </div>
 
@@ -120,7 +121,7 @@ export default function Login() {
         <div className={cx("Spacer")}></div>
       </form>
       {
-          (isSubmit && passwordRef.current.value && passwordRef.current.value && !loginSuccessfully &&
+          (isSubmit && passwordRef.current.value && passwordRef.current.value &&  isLoginSS &&
             <label className='warning'> <RiErrorWarningFill/> Đăng nhập thất bại!</label>
           )
       }

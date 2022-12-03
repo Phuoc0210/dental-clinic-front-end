@@ -5,16 +5,14 @@ import { LoGo } from "../../../data";
 import { Slider } from "../../../data";
 export default function ContentBlog() {
     return (
-        <>
+        <div className="containerBlog">
             <img className="SliderBlog" src={Slider.SliderBlog} alt=""/>
             <h1 className=" TitleDV">
                 <center>
                     KIẾN THỨC NHA KHOA - BLOG
                 </center>
             </h1>
-            <div className="content">
-            <img className="Logo" src={LoGo.ImgLogo} alt='LoGo'/>
-            </div>
+           
             <p class="Description" >
             <center >
             Tổng hợp kiến thức về bệnh lý răng miệng, cách điều trị, phòng ngừa và chăm sóc hiệu quả. Đừng quên bảo vệ sức khỏe răng miệng đúng cách mỗi ngày và liên hệ với Elite Dental ngay khi dấu hiệu bất thường để được tư vấn chính xác và nhanh chóng.
@@ -47,6 +45,6 @@ export default function ContentBlog() {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     )
 }

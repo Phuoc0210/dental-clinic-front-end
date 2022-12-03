@@ -95,7 +95,7 @@ function AppointmentTable(){
             }
             newList.splice(indexAppointment.current,0,data);
             setAppointments(newList)
-            //callApiDeleteappointment(idappointment.current)
+            callApiDeleteappointment(idappointment.current)
             handleDialog( "", false)
         } else{
             handleDialog( "", false)
@@ -143,7 +143,7 @@ function AppointmentTable(){
             }
             newList.splice(indexAppointment.current,0,data);
             setAppointments(newList)
-            //callApiExamineappointment(idappointment.current)
+            callApiExamineappointment(idappointment.current)
             handleDialogE( "", false)
         } else{
             handleDialogE( "", false)
@@ -156,8 +156,6 @@ function AppointmentTable(){
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Dịch vụ</th>
-                        <th>Địa điểm</th>
                         <th>Phòng</th>
                         <th>Ngày</th>
                         <th>Bắt đầu</th>
@@ -175,8 +173,6 @@ function AppointmentTable(){
                             >
                                 <td>{appointment['id']}</td>
                                 <td>{appointment['desc']}</td>
-                                <td>{appointment['place']}</td>
-                                <td>{appointment['room']}</td>
                                 <td>{appointment['day']}</td>
                                 <td>{appointment['otime']}</td>
                                 <td>{appointment['etime']}</td>

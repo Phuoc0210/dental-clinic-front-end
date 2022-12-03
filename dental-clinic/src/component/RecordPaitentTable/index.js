@@ -72,7 +72,7 @@ function RecordrecordTable(){
         if(chosoe){
             const newList = records.filter(record => record['rec_id'] != idRecord.current )
             setRecords(newList)
-            //callApiDeleteRecord(idRecord.current)
+            callApiDeleteRecord(idRecord.current)
             handleDialog( "", false)
         } else{
             handleDialog( "", false)
