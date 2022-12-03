@@ -9,7 +9,6 @@ import {RiErrorWarningFill} from 'react-icons/ri'
 const cx = classNames.bind(MakeAppointmentStyle);
 
 function MakeAppointment() {
-
     let minHour = new Date();
     minHour.setHours(8,30,0); // 8.30 am
     let maxHour = new Date();
