@@ -88,7 +88,7 @@ function MakeAppointment() {
         }
         if(dateChoose && timeChoose && description  && !isErrorTime){
             setIsLoading(true)
-            //CallApiMakeAppointment()
+            CallApiMakeAppointment()
         } else {
             setIsLoading(false)
         }

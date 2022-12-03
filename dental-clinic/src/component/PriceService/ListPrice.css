@@ -10,3 +10,7 @@
  h1 {
     color: rgb(33, 177, 226);
 }
+.wrapperPrice{
+    width: 100%;
+    background-color: white;
+}

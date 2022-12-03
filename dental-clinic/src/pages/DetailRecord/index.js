@@ -58,10 +58,8 @@ function DetailRecord() {
     }
     const option = {
             method: "POST",
-           
             headers: {
                  "Content-Type": "application/json"
-                 
             },
             body: JSON.stringify(data)
     }
@@ -78,6 +76,7 @@ function DetailRecord() {
 		const url = 'https://dental-clinic-project.herokuapp.com/api/add_medical_record'
         const data = { 
 			"d_id": dID,
+			"p_id": param.userID,
 			"rec_dease": dease,
 			"p_dateOB": userProfile['p_dateOB'], 
 			"p_sex": userProfile['p_sex'], 
@@ -111,7 +110,7 @@ function DetailRecord() {
 	function callApiUpateRecord(){
 		const url = 'https://dental-clinic-project.herokuapp.com/api/record/update'
         const data = { 
-			"rec_id": param.recID,
+			"rec_id": Number(param.recID),
 			"rec_dease": dease,
 			"rec_desc": desc,
 			"rec_indiagnose": inDiagnose,
@@ -122,10 +121,7 @@ function DetailRecord() {
          const option = {
              method: "POST",
              
-             headers: {
-                     "Content-Type": "application/json"
-                     
-             },
+             //headers: {     "Content-Type": "application/json"       },
              body: JSON.stringify(data)
          }
          fetch( url, option)
@@ -134,20 +130,15 @@ function DetailRecord() {
                  console.log(result)
              }
          )
+		 console.log(data)
 	}
 
 	function handleSubmit() {
-		if(dease && desc && inDiagnose && outDiagnose && conclusion && examineDay && reExamineDay)
-		{
-			if (param.action === 'update'){
-				callApiUpateRecord()
-			}
-			else {
-				callApiAddRecord()
-			}
+		if (param.action === 'update'){
+			callApiUpateRecord()
 		}
 		else {
-			alert()
+			callApiAddRecord()
 		}
 	}
 

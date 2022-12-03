@@ -50,9 +50,7 @@ function HistoryMATable({userID}){
             <table className={cx('hma-table')}>
                 <thead>
                     <tr>
-                        <th>Dịch vụ</th>
-                        <th>Địa điểm</th>
-                        <th>Phòng</th>
+                        <th>Dịch vụ</th>    
                         <th>Ngày</th>
                         <th>Bắt đầu</th>
                         <th>Kết thúc</th>
@@ -66,8 +64,6 @@ function HistoryMATable({userID}){
                             style={{backgroundColor: index % 2 != 0 ? "DCF2FF" : "#B8E3FF"}}
                             >
                                 <td>{appoitment['desc']}</td>
-                                <td>{appoitment['place']}</td>
-                                <td>{appoitment['room']}</td>
                                 <td>{appoitment['day']}</td>
                                 <td>{appoitment['otime']}</td>
                                 <td>{appoitment['etime']}</td>

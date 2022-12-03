@@ -1,36 +1,40 @@
 import React from "react";
-import "./service.css"
+import Service from "./service.css"
 import { service } from "../../../data";
 import { LoGo } from "../../../data";
 import { Slider } from "../../../data";
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(Service);
+
 export default function ContentService() {
     return (
-        <>  
-             <img className="SliderDV" src={Slider.SliderDV} alt=""/>
-            <h1 className=" TitleDV">
+       <div className={cx('wrapper-service')}>
+        <img className={cx("SliderDV")} src={Slider.SliderDV} alt=""/>
+            <h1 className={cx(" TitleDV")}>
                 <center>
                     Các dịch vụ tại DR.STRANGE
                 </center>
             </h1>
-            <div className="content">
-            <img className="Logo" src={LoGo.ImgLogo} alt='LoGo'/>
+            <div className={cx("content")}>
+           
             </div>
-            <section className="service">
-                <div className="container" >
-                    <div className="row" >
+            <section className={cx("service")}>
+                <div className={cx("container-service")} >
+                    <div className={cx("row")} >
                         {service.map((service, index) => {
                             return (
-                                <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 service-item" key={index} >
-                                    <div className="card" >
-                                        <div className="ImageSV">
-                                            <div className="card-img-top" >
-                                                <img src={service.ImageUrl} className="img-top" alt="..." />
+                                <div className={cx("col-xl-4 col-lg-4 col-md-6 col-sm-12 service-item")} key={index} >
+                                    <div className={cx("card")} >
+                                        <div className={cx("ImageSV")}>
+                                            <div className={cx("card-img-top")} >
+                                                <img src={service.ImageUrl} className={cx("img-top")} alt="..." />
                                             </div>
                                         </div>
-                                        <div className="card-body">
-                                            <h5 className="card-title">{service.serviceName}</h5>
-                                            <p className="card-text"><center>{service.metaDescription}</center></p>
-                                            <button className="showmore">Xem Chi Tiết</button>
+                                        <div className={cx("card-body")}>
+                                            <h5 className={cx("card-title")}>{service.serviceName}</h5>
+                                            <p className={cx("card-text")}><center>{service.metaDescription}</center></p>
+                                            <button className={cx("showmore")}>Xem Chi Tiết</button>
                                         </div>
                                     </div>
                                 </div>
@@ -40,7 +44,7 @@ export default function ContentService() {
                     </div>
                 </div>
             </section>
-            {/* <img src={service.ImageUrl} className="card-img-top" alt="..." /> */}
-        </>
+            {/* <img src={service.ImageUrl} className={cx("card-img-top")} alt="..." /> */}
+       </div>
     )
 }

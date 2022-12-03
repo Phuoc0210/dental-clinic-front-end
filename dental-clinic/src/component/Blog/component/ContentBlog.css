@@ -3,13 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+.containerBlog{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .Description{
     margin:50px;
     font-size: 22px;
 }
 .SliderBlog{
     width: 100%;
-    margin: 10px 0px;
+    margin-bottom: 20px;
 }
 .card-title{
     display: flex;

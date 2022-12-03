@@ -6,7 +6,7 @@ import './ListPrice.css'
 
 export default function PricePage() {
     return (
-        <>
+        <div className="wrapperPrice">
             <img className="SliderDV" src={Slider.SliderPrice} alt="" />
             <h1 className=" TitleDV">
                 <center>
@@ -14,11 +14,8 @@ export default function PricePage() {
                 </center>
             </h1>
             <div className="content">
-                <img className="Logo" src={LoGo.ImgLogo} alt='LoGo' />
-            </div>
-            <div className="content">
                 <img class="banggia" src={banggia} alt=""/>
             </div>
-        </>
+        </div>
     )
 }
