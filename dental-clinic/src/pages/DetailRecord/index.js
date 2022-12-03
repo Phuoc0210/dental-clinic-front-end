@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import DetailRecordStyle from './DetailRecordStyle.css'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useStore } from '../../store';
+import Dialog from '../../component/Dialog/Dialog';
 
 const cx = classNames.bind(DetailRecordStyle);
 
@@ -21,7 +22,7 @@ function DetailRecord() {
         )
     },[])
 	const isInfo = (param.action === 'view') ? false : true;
-
+	const chooseRef = useRef()
 	const [dID,setDID] = useState()
 	const [dease,setDease] = useState()
 	const [inDiagnose,setInDiagnose] = useState()
@@ -30,6 +31,30 @@ function DetailRecord() {
 	const [desc,setDesc] = useState()
 	const [examineDay,setExamineDay] = useState()
 	const [reExamineDay,setReExamineDay] = useState()
+	const [dialog,setDialog] = useState({
+        message:'',
+        isLoading: false
+    })
+	const handleDialog = (message, isLoading) =>{
+        setDialog(
+            {
+                message,
+                isLoading,
+            }
+        )
+    }
+	const areSureDelete = (chosoe) => {
+        if(chosoe){
+            handleDialog( "", false)
+			if(chooseRef.current === 'update'){
+				callApiUpateRecord()
+			} else {
+				callApiAddRecord()
+			}
+        } else{
+            handleDialog( "", false)
+        }
+    }
 	const urlRec = `https://dental-clinic-project.herokuapp.com/api/medical_record`
 	useEffect(
 		() => {
@@ -133,15 +158,22 @@ function DetailRecord() {
 		 console.log(data)
 	}
 
+	const navigate = useNavigate()
 	function handleSubmit() {
 		if (param.action === 'update'){
-			callApiUpateRecord()
+			handleDialog( "Bạn có chắc muốn cập nhật bệnh án này?", true)
+			chooseRef.current = 'update'
+			//callApiUpateRecord()
+			//navigate(`/admin/doctor/record/${param.userID}`)
 		}
 		else {
-			callApiAddRecord()
+			handleDialog( "Bạn có chắc muốn thêm bệnh án này?", true)
+			chooseRef.current = 'add'
+			//callApiAddRecord()
+			//navigate(`/admin/doctor/record/${param.userID}`)
 		}
 	}
-
+	
 
 	return (
 		<div className={cx('wrapper-detail-record')}>
@@ -237,6 +269,7 @@ function DetailRecord() {
 					className={cx('btn-submit-record')}>Lưu</button>}
 				</div>
 			</div>
+			{ dialog.isLoading && <Dialog onDialog={areSureDelete} message = {dialog.message}/>}
 		</div>
 	)
 }
